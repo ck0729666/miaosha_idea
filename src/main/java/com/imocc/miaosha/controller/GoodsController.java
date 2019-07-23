@@ -41,6 +41,16 @@ public class GoodsController {
     private ApplicationContext applicationContext;
 
 
+    /**
+     * qps:1108
+     * 5000*10
+     * qps:2711
+     * @param request
+     * @param response
+     * @param model
+     * @param user
+     * @return
+     */
     @RequestMapping(value = "/to_list", produces = "text/html")
     //@RequestMapping(value="/to_list")
     @ResponseBody

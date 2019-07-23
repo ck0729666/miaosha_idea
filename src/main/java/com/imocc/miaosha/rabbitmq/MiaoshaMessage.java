@@ -3,23 +3,18 @@ package com.imocc.miaosha.rabbitmq;
 import com.imocc.miaosha.domain.MiaoshaUser;
 
 public class MiaoshaMessage {
-
-    private Long goodsId;
     private MiaoshaUser user;
-
-    public Long getGoodsId() {
-        return goodsId;
-    }
-
-    public void setGoodsId(Long goodsId) {
-        this.goodsId = goodsId;
-    }
-
+    private long goodsId;
     public MiaoshaUser getUser() {
         return user;
     }
-
     public void setUser(MiaoshaUser user) {
         this.user = user;
+    }
+    public long getGoodsId() {
+        return goodsId;
+    }
+    public void setGoodsId(long goodsId) {
+        this.goodsId = goodsId;
     }
 }

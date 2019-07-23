@@ -7,36 +7,33 @@ import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 @Service
 public class MQSender {
 
-    private static Logger log = LoggerFactory.getLogger(MQSender.class);
-
+    private static Logger log = LoggerFactory.getLogger(MQReceiver.class);
 
     @Autowired
     AmqpTemplate amqpTemplate;
 
-    public void sendMiaoshaMessage(MiaoshaMessage mm){
-        String msg = RedisService.beanToString(mm);
-        log.info("send message" + msg);
+    public void sendMiaoshaMessage(Object message){
+        String msg = RedisService.beanToString(message);
+        log.info(msg);
         amqpTemplate.convertAndSend(MQConfig.MIAOSHA_QUEUE, msg);
     }
-
     /**
-    public void send(Object message){
-        String msg = RedisService.beanToString(message);
-        log.info("send direct message:" + msg);
-        amqpTemplate.convertAndSend(MQConfig.QUEUE, msg);
-
+    @RabbitListener(queues=MQConfig.TOPIC_QUEUE1)
+    public void receiveTopic1(String message){
+        log.info("topic queue1 message:" + message);
     }
 
-    public void sendTopic(Object message){
-        String msg = RedisService.beanToString(message);
-        log.info("send topic message:" + msg);
-        amqpTemplate.convertAndSend(MQConfig.TOPIC_EXCHANGE,"topic.key1",msg+"1");
-        amqpTemplate.convertAndSend(MQConfig.TOPIC_EXCHANGE,"topic.key2",msg+"2");
+    @RabbitListener(queues=MQConfig.TOPIC_QUEUE2)
+    public void receiveTopic2(String message){
+        log.info("topic queue2 message:" + message);
     }*/
+
+
+
+
 
 
 

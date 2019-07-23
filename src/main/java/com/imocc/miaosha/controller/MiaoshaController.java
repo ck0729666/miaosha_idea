@@ -16,8 +16,6 @@ import com.imocc.miaosha.rabbitmq.MQSender;
 import com.imocc.miaosha.redis.GoodsKey;
 import com.imocc.miaosha.result.Result;
 import com.imocc.miaosha.service.OrderService;
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import org.omg.CORBA.TRANSACTION_MODE;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
