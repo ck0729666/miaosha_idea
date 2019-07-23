@@ -55,12 +55,13 @@ public class SampleController {
     @Autowired
     MQSender sender;
 
+    /**
     @RequestMapping("/mq")
     @ResponseBody
     public Result<String> mq(){
         sender.send("ckckck");
         return Result.success("Helloworld");
-    }
+    }*/
 
     /**
     @RequestMapping("/mq/topic")
